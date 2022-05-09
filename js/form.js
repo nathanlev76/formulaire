@@ -22,6 +22,10 @@ function traiterFormulaire(){
     if(prenom.value.toLowerCase() === "giga" && nom.value.toLowerCase() === "chad"){
         video.play();
         document.getElementById("video").className = "video";
+        var elem = document.getElementById("video");
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+}
     }
 
     if (nomVal === '') {
