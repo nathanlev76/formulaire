@@ -1,35 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Formulaire</title>
 </head>
 <body>
+    <video loop id="video" class="videoPetit">
+        <source src="./media/video.mp4" type="video/mp4">
+    </video>
     <div class="container">
-        <form action="action_page.php">
+        <form action="">
       
           <label for="prenom">Prénom</label>
-          <input type="text" id="prenom" name="prenom" placeholder="Ton prénom...">
+          <input type="text" id="prenom" name="prenom" placeholder="Ton prénom..">
       
-          <label for="lname">Nom</label>
-          <input type="text" id="nom" name="nom" placeholder="Ton nom...">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Ton nom..">
       
-          <label for="country">Pays</label>
-          <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
+          <label for="objet">Objet</label>
+          <select id="objet" name="objet">
+            <option value="0">Choississez une option dans la liste...</option>
+            <option value="Prise de contact">Prise de contact</option>
+            <option value="Reclamation client">Reclamation client</option>
           </select>
       
-          <label for="subject">Subject</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-      
-          <button>Valider</button>
+          <label for="commentaire">Commentaire</label>
+          <textarea id="commentaire" name="commentaire" placeholder="Ecrivez ici.." rows="10"></textarea>
+          <input type="checkbox" id="rgpd" name="rgpd" required="required" oninvalid="setCustomValidity(' ')">
+          <label for="rgpd">J'accepte les conditions d'utilisations</label><br>
+          
+          <button id="submit">Valider</button>
+          <span id="message"></span>
       
         </form>
-      </div>    
+      </div>
+      <script src="./js/form.js"></script>
 </body>
 </html>
